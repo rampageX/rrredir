@@ -40,7 +40,7 @@
 #endif
 
 static const struct server* server;
-unsigned long timeout;
+float timeout;
 static sblist* targets;
 
 struct target {
@@ -246,7 +246,7 @@ int main(int argc, char** argv) {
 				port = atoi(optarg);
 				break;
 			case 't':
-				timeout = atoi(optarg);
+				timeout = atof(optarg);
 				break;
 			case ':':
 				dprintf(2, "error: option -%c requires an operand\n", optopt);
